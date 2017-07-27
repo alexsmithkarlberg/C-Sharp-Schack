@@ -64,7 +64,7 @@ namespace Schack_Matt
 
             // This part will add all positions along the +x, -y axis
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 1; i++)
             {
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX + 1;
@@ -74,7 +74,7 @@ namespace Schack_Matt
 
             // This part will add all positions along the -x, +y axis
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 1; i++)
             {
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX - 1;
@@ -84,7 +84,7 @@ namespace Schack_Matt
 
             // This part will add all positions along the -x, -y axis
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 1; i++)
             {
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX - 1;

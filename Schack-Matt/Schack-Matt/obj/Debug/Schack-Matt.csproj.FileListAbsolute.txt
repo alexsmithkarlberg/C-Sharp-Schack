@@ -1,3 +1,4 @@
 C:\Users\alexs\Source\Repos\GameOfLife\Schack-Matt\Schack-Matt\bin\Debug\Schack-Matt.exe.config
 C:\Users\alexs\Source\Repos\C-Sharp-Schack\Schack-Matt\Schack-Matt\bin\Debug\Schack-Matt.exe.config
 C:\Users\Doffe\Source\Repos\C-Sharp-Schack\Schack-Matt\Schack-Matt\bin\Debug\Schack-Matt.exe.config
+C:\Users\Doffe\Source\Repos\C-Sharp-Schack\Schack-Matt\Schack-Matt\obj\Debug\Schack-Matt.csprojResolveAssemblyReference.cache
