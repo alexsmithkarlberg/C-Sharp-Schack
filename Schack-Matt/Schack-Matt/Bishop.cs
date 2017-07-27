@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Schack_Matt
 {
-    class Bishop
+    class Bishop : Pieces
     {
         public List<Positions> GetAllMoves(Positions currentPos)
         {

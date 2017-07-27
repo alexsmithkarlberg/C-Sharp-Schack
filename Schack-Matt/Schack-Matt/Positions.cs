@@ -10,6 +10,5 @@ namespace Schack_Matt
     {
         public int PosX { get; set; }
         public int PosY { get; set; }
-
     }
 }

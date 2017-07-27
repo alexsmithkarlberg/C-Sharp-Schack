@@ -8,5 +8,13 @@ namespace Schack_Matt
 {
     class Pieces
     {
+        int value;
+        string color;
+
+        //public Pieces(string color, int value)
+        //{
+        //    this.value = value;
+        //    this.color = color;
+        //}      
     }
 }
