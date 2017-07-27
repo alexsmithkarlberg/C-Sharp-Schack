@@ -8,5 +8,6 @@ namespace Schack_Matt
 {
     class Player
     {
+        bool colorChoice;
     }
 }
