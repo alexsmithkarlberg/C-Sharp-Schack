@@ -8,6 +8,7 @@ namespace Schack_Matt
 {
     class Board
     {
-        Board[,] board = new Board[8,8];
+        
     }
+    
 }
