@@ -8,6 +8,8 @@ namespace Schack_Matt
 {
     class Player
     {
+        bool playerColorChoice;
+
         private void PlayerBlackPieces()
         {
             List<Pieces> blackPieces = new List<Pieces>();
