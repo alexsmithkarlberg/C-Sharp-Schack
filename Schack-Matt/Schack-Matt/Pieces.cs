@@ -8,8 +8,9 @@ namespace Schack_Matt
 {
     class Pieces
     {
-        int value;
-        string color;
+        public int value;
+        public string color;
+        public string name;
 
         //public Pieces(string color, int value)
         //{
