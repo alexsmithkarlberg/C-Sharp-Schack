@@ -12,7 +12,7 @@ namespace Schack_Matt
         public string color;
         public string name;
 
-        public Pieces(string Color, int Value, string Name)
+        public Pieces(string Color, int Value, string Name) 
         {
             this.value = Value;
             this.color = Color;

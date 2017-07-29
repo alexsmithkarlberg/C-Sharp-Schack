@@ -8,5 +8,9 @@ namespace Schack_Matt
 {
     class Chess
     {
+        private List<int> IllegalMoves()
+        {
+
+        }
     }
 }

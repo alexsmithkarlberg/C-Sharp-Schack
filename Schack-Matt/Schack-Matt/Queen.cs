@@ -8,6 +8,10 @@ namespace Schack_Matt
 {
     class Queen : Pieces
     {
+        public Queen(string Color, int Value, string Name) : base(Color, Value, Name)
+        {
+        }
+
         public List<Positions> GetAllMoves(Positions currentPos)
         {
             List<Positions> moves = new List<Positions>();
@@ -94,5 +98,6 @@ namespace Schack_Matt
             }
 
         }
+
     }
 }

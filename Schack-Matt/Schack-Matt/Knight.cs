@@ -8,6 +8,10 @@ namespace Schack_Matt
 {
     class Knight : Pieces
     {
+        public Knight(string Color, int Value, string Name) : base(Color, Value, Name)
+        {
+        }
+
         public List<Positions> GetAllMoves(Positions currentPos)
         {
             List<Positions> moves = new List<Positions>();

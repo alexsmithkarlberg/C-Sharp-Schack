@@ -41,7 +41,7 @@ namespace Schack_Matt
             {
                 boardOfPieces[i, 7] = new Pieces("White", 1, "Pawn");
             }
-            #endregion
+
             for (int x = 0; x < boardOfPieces.GetLength(0); x++)
             {
                 for (int y = 0; y < boardOfPieces.GetLength(1); y++)
@@ -50,6 +50,7 @@ namespace Schack_Matt
                         boardOfPieces[x, y] = new Pieces("", 0, "");
                 }
             }
+            #endregion
         }
     }
 }
