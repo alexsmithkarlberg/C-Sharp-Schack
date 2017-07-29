@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Schack_Matt
 {
-    class Board
+   public class Board
     {
         Pieces[,] boardOfPieces = new Pieces[8, 8];
 
@@ -20,7 +20,7 @@ namespace Schack_Matt
             boardOfPieces[4, 0] = new Pieces("Black", 7, "Queen");
             boardOfPieces[5, 0] = new Pieces("Black", 6, "Bishop");
             boardOfPieces[6, 0] = new Pieces("Black", 5, "Knight");
-            boardOfPieces[7, 0] = new Pieces("Black", 4, "Rook");
+            boardOfPieces[7, 0] = new Pieces("Black", 4, "Rook");           
 
             for (int i = 0; i < 8; i++)
             {
@@ -40,16 +40,8 @@ namespace Schack_Matt
             for (int i = 0; i < 8; i++)
             {
                 boardOfPieces[i, 7] = new Pieces("White", 1, "Pawn");
-            }
+            }          
             #endregion
-            for (int x = 0; x < boardOfPieces.GetLength(0); x++)
-            {
-                for (int y = 0; y < boardOfPieces.GetLength(1); y++)
-                {
-                    if (boardOfPieces[x, y] == null)
-                        boardOfPieces[x, y] = new Pieces("", 0, "");
-                }
-            }
         }
     }
 }
