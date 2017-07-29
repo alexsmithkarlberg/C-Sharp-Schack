@@ -11,6 +11,7 @@ namespace Schack_Matt
         public int value;
         public string color;
         public string name;
+        public List<Positions> PiecesMoves = new List<Positions>();
 
         public Pieces(string Color, int Value, string Name) 
         {

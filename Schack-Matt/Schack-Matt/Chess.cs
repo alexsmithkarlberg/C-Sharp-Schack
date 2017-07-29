@@ -8,7 +8,35 @@ namespace Schack_Matt
 {
     class Chess
     {
-        private List<int> IllegalMoves()
+        List<Positions> AllMoves = new List<Positions>();
+
+        private List<Positions> CopyList(List<Positions> a, List<Positions> b)
+        {
+            a = b;
+            return b;
+        }
+        private List<Positions> ClearList(List<Positions> a)
+        {
+            a.Clear();
+            return a;
+        }
+        private List<Positions> AllAvailableMoves(List<Positions> a, Pieces[,] b)
+        {
+            for (int x = 0; x < b.GetLength(0); x++)
+            {
+                for (int y = 0; y < b.GetLength(1); y++)
+                {
+                    if (b[x, y] != null)
+                    {
+                        if (true)
+                        {
+
+                        }
+                    }
+                }
+            }
+        }
+        private List<int> OutOfBounds()
         {
 
         }

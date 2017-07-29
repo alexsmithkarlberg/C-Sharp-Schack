@@ -12,9 +12,8 @@ namespace Schack_Matt
         {
         }
 
-        public List<Positions> GetAllMoves(Positions currentPos)
-        {
-            List<Positions> moves = new List<Positions>();
+        public void GetAllMoves(Positions currentPos)
+        {           
             // This part will add positions along the +x, +y axis
 
             for (int i = 0; i < 1; i++)
@@ -22,7 +21,7 @@ namespace Schack_Matt
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX + 2;
                 pos.PosY = currentPos.PosY + 1;
-                moves.Add(pos);
+                this.PiecesMoves.Add(pos);
             }
 
             // This part will add positions along the +x, -y axis
@@ -32,7 +31,7 @@ namespace Schack_Matt
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX + 2;
                 pos.PosY = currentPos.PosY - 1;
-                moves.Add(pos);
+                this.PiecesMoves.Add(pos);
             }
 
             // This part will add positions along the -x, +y axis
@@ -42,7 +41,7 @@ namespace Schack_Matt
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX - 2;
                 pos.PosY = currentPos.PosY + 1;
-                moves.Add(pos);
+                this.PiecesMoves.Add(pos);
             }
 
             // This part will add positions along the -x, -y axis
@@ -52,7 +51,7 @@ namespace Schack_Matt
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX - 2;
                 pos.PosY = currentPos.PosY - 1;
-                moves.Add(pos);
+                this.PiecesMoves.Add(pos);
             }
 
             // This part will add positions along the +x, +y axis
@@ -62,7 +61,7 @@ namespace Schack_Matt
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX + 1;
                 pos.PosY = currentPos.PosY + 2;
-                moves.Add(pos);
+                this.PiecesMoves.Add(pos);
             }
 
             // This part will add positions along the +x, -y axis
@@ -72,7 +71,7 @@ namespace Schack_Matt
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX + 1;
                 pos.PosY = currentPos.PosY - 2;
-                moves.Add(pos);
+                this.PiecesMoves.Add(pos);
             }
 
             // This part will add positions along the -x, +y axis
@@ -82,7 +81,7 @@ namespace Schack_Matt
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX - 1;
                 pos.PosY = currentPos.PosY + 2;
-                moves.Add(pos);
+                this.PiecesMoves.Add(pos);
             }
 
             // This part will add positions along the -x, -y axis
@@ -92,9 +91,8 @@ namespace Schack_Matt
                 Positions pos = new Positions();
                 pos.PosX = currentPos.PosX - 1;
                 pos.PosY = currentPos.PosY - 2;
-                moves.Add(pos);
-            }
-
+                this.PiecesMoves.Add(pos);
+            }           
         }
     }
 }
