@@ -28,7 +28,7 @@ namespace Schack_Matt
                 {
                     if (b[x, y] != null)
                     {
-                        if (true)
+                        if ()
                         {
 
                         }
