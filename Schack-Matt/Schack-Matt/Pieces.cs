@@ -46,6 +46,7 @@ namespace Schack_Matt
                     }
                 }
             }
+            //this
             for (int i = 0; i < b.GetLength(0); i++)
             {
                 for (int j = 0; j < b.GetLength(1); j++)
