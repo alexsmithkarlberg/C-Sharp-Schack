@@ -20,18 +20,19 @@ namespace Schack_Matt
             this.color = Color;
             this.name = Name;
         }
-        public void RemoveIllegalMoves(List<Positions> a, Pieces[,] b)
+        public void RemoveIllegalMoves(Pieces[,] b)
         {
             //this part removes all moves that would go out of bounds
-            for (int i = 0; i < a.Count; i++)
+            for (int i = 0; i < PiecesMoves.Count; i++)
             {
-                if (currentPosition.PosX > 7 || currentPosition.PosX < 0 || currentPosition.PosY > 7 || currentPosition.PosY < 0)
+                if (this.PiecesMoves[i].PosX > 7 || this.PiecesMoves[i].PosX < 0 || this.PiecesMoves[i].PosY > 7 || this.PiecesMoves[i].PosY < 0)
                 {
-                    a.Remove(currentPosition);
+                    PiecesMoves.RemoveAt(i);
                     i--;
                 }
             }
             // this part removes all moves that would collide with the same color.
+            // Implement shanges from row 28 to everything that follows.
             for (int i = 0; i < a.Count; i++)
             {
                 for (int j = 0; j < b.GetLength(0); j++)
@@ -47,39 +48,47 @@ namespace Schack_Matt
                 }
             }
             //this
-            for (int i = 0; i < b.GetLength(0); i++)
+            for (int i = 0; i < a.Count; i++)
             {
-                for (int j = 0; j < b.GetLength(1); j++)
+                for (int j = 0; j < b.GetLength(0); j++)
                 {
-                    if (b[i, j] != null)
+                    for (int k = 0; k < b.GetLength(1); k++)
                     {
-                        for (int k = 0; k < b.GetLength(0); k++)
+                        if (b[j, k] != null)
                         {
-                            for (int l = 0; l < b.GetLength(1); l++)
+                            for (int l = 0; l < b.GetLength(0); l++)
                             {
-                                if (currentPosition.PosX < b[i,j].currentPosition.PosX)
+                                for (int m = 0; m < b.GetLength(1); m++)
                                 {
+                                    if (b[j, k].currentPosition.PosX < currentPosition.PosX)
+                                    {
+                                        if (true)
+                                        {
 
-                                }
-                                else if (currentPosition.PosX > b[i, j].currentPosition.PosX)
-                                {
+                                        }
 
-                                }
-                                else
-                                {
+                                    }
+                                    else if (b[j, k].currentPosition.PosX > currentPosition.PosX)
+                                    {
 
-                                }
-                                if (currentPosition.PosY < b[i, j].currentPosition.PosY)
-                                {
+                                    }
+                                    else
+                                    {
 
-                                }
-                                else if (currentPosition.PosY > b[i, j].currentPosition.PosY)
-                                {
+                                    }
+                                    if (currentPosition.PosY < b[j, k].currentPosition.PosY)
+                                    {
 
-                                }
-                                else
-                                {
 
+                                    }
+                                    else if (currentPosition.PosY > b[j, k].currentPosition.PosY)
+                                    {
+
+                                    }
+                                    else
+                                    {
+
+                                    }
                                 }
                             }
                         }
