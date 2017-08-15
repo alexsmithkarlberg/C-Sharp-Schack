@@ -8,7 +8,7 @@ namespace Schack_Matt
 {
     class King : Pieces
     {
-        public King(string Color, int Value, string Name) : base(Color, Value, Name)
+        public King(string Color, int Value, string Name, int PosX, int PosY) : base(Color, Value, Name, PosX, PosY)
         {
         }
 
