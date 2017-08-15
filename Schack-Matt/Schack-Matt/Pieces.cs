@@ -54,8 +54,8 @@ namespace Schack_Matt
                 if (b[PiecesMoves[i].PosX, PiecesMoves[i].PosY] != null)
                 {
 
-                    int x = PiecesMoves[i].PosX - currentPosition.PosX;
-                    int y = PiecesMoves[i].PosY - currentPosition.PosY;
+                    int x = PiecesMoves[i].PosX - currentPos.PosX;
+                    int y = PiecesMoves[i].PosY - currentPos.PosY;
                     if (x > 0 && y > 0)
                     {
                         for (int j = 0; j < PiecesMoves.Count; j++)
