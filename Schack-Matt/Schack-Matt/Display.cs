@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Schack_Matt
 {
-    class Display
+    public class Display
     {
-       
+       public void PieceDisplay(Pieces a)
+        {
+            
+        }
     }
 }
