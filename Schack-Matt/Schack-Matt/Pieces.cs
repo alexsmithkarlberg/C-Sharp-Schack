@@ -20,7 +20,7 @@ namespace Schack_Matt
             this.color = Color;
             this.name = Name;
         }
-        public void RemoveIllegalMoves(Pieces[,] b)
+        public void RemoveIllegalMovesOutOfBounds()
         {
             //this part removes all moves that would go out of bounds
             for (int i = 0; i < PiecesMoves.Count; i++)
@@ -31,65 +31,117 @@ namespace Schack_Matt
                     i--;
                 }
             }
-            // this part removes all moves that would collide with the same color.
-            // Implement shanges from row 28 to everything that follows.
-            for (int i = 0; i < a.Count; i++)
+
+
+
+        }
+        public void RemoveIllegalMovesColorCollide(Pieces[,] b)
+        {
+            // This part removes all moves that would collide with a piece of the same color.
+            for (int i = 0; i < PiecesMoves.Count; i++)
             {
-                for (int j = 0; j < b.GetLength(0); j++)
+                if (this.color == b[PiecesMoves[i].PosX, PiecesMoves[i].PosY].color)
                 {
-                    for (int k = 0; k < b.GetLength(1); k++)
-                    {
-                        if (this.color == b[j, k].color)
-                        {
-                            a.Remove(currentPosition);
-                            i--;
-                        }
-                    }
+                    this.PiecesMoves.RemoveAt(i);
+                    i--;
                 }
             }
-            //this
-            for (int i = 0; i < a.Count; i++)
+        }
+        public void RemoveIllegalMovesBehindTarget(Pieces[,] b)
+        {
+            //this part removes all illegal moves behind a target
+            for (int i = 0; i < PiecesMoves.Count; i++)
             {
-                for (int j = 0; j < b.GetLength(0); j++)
+                if (b[PiecesMoves[i].PosX, PiecesMoves[i].PosY] != null)
                 {
-                    for (int k = 0; k < b.GetLength(1); k++)
+
+                    int x = PiecesMoves[i].PosX - currentPosition.PosX;
+                    int y = PiecesMoves[i].PosY - currentPosition.PosY;
+                    if (x > 0 && y > 0)
                     {
-                        if (b[j, k] != null)
+                        for (int j = 0; j < PiecesMoves.Count; j++)
                         {
-                            for (int l = 0; l < b.GetLength(0); l++)
+                            if ((PiecesMoves[j].PosX - PiecesMoves[i].PosX) > 0 && (PiecesMoves[j].PosY - PiecesMoves[i].PosY) > 0)
                             {
-                                for (int m = 0; m < b.GetLength(1); m++)
-                                {
-                                    if (b[j, k].currentPosition.PosX < currentPosition.PosX)
-                                    {
-                                        if (true)
-                                        {
-
-                                        }
-
-                                    }
-                                    else if (b[j, k].currentPosition.PosX > currentPosition.PosX)
-                                    {
-
-                                    }
-                                    else
-                                    {
-
-                                    }
-                                    if (currentPosition.PosY < b[j, k].currentPosition.PosY)
-                                    {
-
-
-                                    }
-                                    else if (currentPosition.PosY > b[j, k].currentPosition.PosY)
-                                    {
-
-                                    }
-                                    else
-                                    {
-
-                                    }
-                                }
+                                PiecesMoves.RemoveAt(i);
+                                i--;
+                            }
+                        }
+                    }
+                    else if (x < 0 && y < 0)
+                    {
+                        for (int j = 0; j < PiecesMoves.Count; j++)
+                        {
+                            if ((PiecesMoves[j].PosX - PiecesMoves[i].PosX) < 0 && (PiecesMoves[j].PosY - PiecesMoves[i].PosY) < 0)
+                            {
+                                PiecesMoves.RemoveAt(i);
+                                i--;
+                            }
+                        }
+                    }
+                    else if (x > 0 && y < 0)
+                    {
+                        for (int j = 0; j < PiecesMoves.Count; j++)
+                        {
+                            if ((PiecesMoves[j].PosX - PiecesMoves[i].PosX) > 0 && (PiecesMoves[j].PosY - PiecesMoves[i].PosY) < 0)
+                            {
+                                PiecesMoves.RemoveAt(i);
+                                i--;
+                            }
+                        }
+                    }
+                    else if (x < 0 && y > 0)
+                    {
+                        for (int j = 0; j < PiecesMoves.Count; j++)
+                        {
+                            if ((PiecesMoves[j].PosX - PiecesMoves[i].PosX) < 0 && (PiecesMoves[j].PosY - PiecesMoves[i].PosY) > 0)
+                            {
+                                PiecesMoves.RemoveAt(i);
+                                i--;
+                            }
+                        }
+                    }
+                    else if (x > 0 && y == 0)
+                    {
+                        for (int j = 0; j < PiecesMoves.Count; j++)
+                        {
+                            if ((PiecesMoves[j].PosX - PiecesMoves[i].PosX) > 0 && (PiecesMoves[j].PosY - PiecesMoves[i].PosY) == 0)
+                            {
+                                PiecesMoves.RemoveAt(i);
+                                i--;
+                            }
+                        }
+                    }
+                    else if (x == 0 && y > 0)
+                    {
+                        for (int j = 0; j < PiecesMoves.Count; j++)
+                        {
+                            if ((PiecesMoves[j].PosX - PiecesMoves[i].PosX) == 0 && (PiecesMoves[j].PosY - PiecesMoves[i].PosY) > 0)
+                            {
+                                PiecesMoves.RemoveAt(i);
+                                i--;
+                            }
+                        }
+                    }
+                    else if (x < 0 && y == 0)
+                    {
+                        for (int j = 0; j < PiecesMoves.Count; j++)
+                        {
+                            if ((PiecesMoves[j].PosX - PiecesMoves[i].PosX) < 0 && (PiecesMoves[j].PosY - PiecesMoves[i].PosY) == 0)
+                            {
+                                PiecesMoves.RemoveAt(i);
+                                i--;
+                            }
+                        }
+                    }
+                    else if (x == 0 && y < 0)
+                    {
+                        for (int j = 0; j < PiecesMoves.Count; j++)
+                        {
+                            if ((PiecesMoves[j].PosX - PiecesMoves[i].PosX) == 0 && (PiecesMoves[j].PosY - PiecesMoves[i].PosY) < 0)
+                            {
+                                PiecesMoves.RemoveAt(i);
+                                i--;
                             }
                         }
                     }
@@ -97,5 +149,5 @@ namespace Schack_Matt
             }
         }
     }
-
 }
+
