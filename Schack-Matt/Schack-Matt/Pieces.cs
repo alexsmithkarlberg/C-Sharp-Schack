@@ -11,14 +11,16 @@ namespace Schack_Matt
         public int value;
         public string color;
         public string name;
-        public Positions currentPosition;
+        public Positions currentPos;
         public List<Positions> PiecesMoves = new List<Positions>();
 
-        public Pieces(string Color, int Value, string Name)
+        public Pieces(string Color, int Value, string Name, int PosX, int PosY)
         {
             this.value = Value;
             this.color = Color;
             this.name = Name;
+            this.currentPos.PosX = PosX;
+            this.currentPos.PosY = PosY;
         }
         public void RemoveIllegalMovesOutOfBounds()
         {
@@ -31,9 +33,6 @@ namespace Schack_Matt
                     i--;
                 }
             }
-
-
-
         }
         public void RemoveIllegalMovesColorCollide(Pieces[,] b)
         {
