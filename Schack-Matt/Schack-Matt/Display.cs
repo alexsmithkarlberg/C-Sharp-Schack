@@ -8,7 +8,7 @@ namespace Schack_Matt
 {
     public class Display
     {
-       public void PieceDisplay(Pieces a)
+       public void PieceDisplay(Pieces[] board)
         {
             
         }

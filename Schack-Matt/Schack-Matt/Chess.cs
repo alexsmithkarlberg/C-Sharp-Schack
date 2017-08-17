@@ -8,8 +8,6 @@ namespace Schack_Matt
 {
     class Chess
     {
-        List<Positions> AllMoves = new List<Positions>();
-
         private List<Positions> CopyList(List<Positions> a, List<Positions> b)
         {
             a = b;

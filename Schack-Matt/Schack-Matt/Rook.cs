@@ -8,7 +8,7 @@ namespace Schack_Matt
 {
     class Rook : Pieces
     {
-        public Rook(string Color, int Value, string Name) : base(Color, Value, Name)
+        public Rook(string Color, int Value, string Name, int PosX, int PosY) : base(Color, Value, Name, PosX, PosY)
         {
         }
 

@@ -6,41 +6,46 @@ using System.Threading.Tasks;
 
 namespace Schack_Matt
 {
-   public class Board
+    public class Board
     {
-        Pieces[,] boardOfPieces = new Pieces[8, 8];
+        Pieces[] boardOfPieces = new Pieces[32];
+        int counter = 0;
 
         public void PopulateTheBoard()
         {
             #region BlackPieces
-            boardOfPieces[0, 0] = new Pieces("Black", 4, "Rook");
-            boardOfPieces[1, 0] = new Pieces("Black", 5, "Knight");
-            boardOfPieces[2, 0] = new Pieces("Black", 6, "Bishop");
-            boardOfPieces[3, 0] = new Pieces("Black", 8, "King");
-            boardOfPieces[4, 0] = new Pieces("Black", 7, "Queen");
-            boardOfPieces[5, 0] = new Pieces("Black", 6, "Bishop");
-            boardOfPieces[6, 0] = new Pieces("Black", 5, "Knight");
-            boardOfPieces[7, 0] = new Pieces("Black", 4, "Rook");           
+            boardOfPieces[0] = new Pieces("Black", 4, "Rook", 0, 0);
+            boardOfPieces[1] = new Pieces("Black", 5, "Knight", 0, 1);
+            boardOfPieces[2] = new Pieces("Black", 6, "Bishop", 0, 2);
+            boardOfPieces[3] = new Pieces("Black", 8, "King", 0, 3);
+            boardOfPieces[4] = new Pieces("Black", 7, "Queen", 0, 4);
+            boardOfPieces[5] = new Pieces("Black", 6, "Bishop", 0, 5);
+            boardOfPieces[6] = new Pieces("Black", 5, "Knight", 0, 6);
+            boardOfPieces[7] = new Pieces("Black", 4, "Rook", 0, 7);
 
-            for (int i = 0; i < 8; i++)
-            {
-                boardOfPieces[i, 1] = new Pieces("Black", 1, "Pawn");
+            for (int i = 8; i < 16; i++)
+            {                
+                boardOfPieces[i] = new Pieces("Black", 1, "Pawn", 1, counter);
+                counter++;
             }
+            counter = 0;
             #endregion
             #region WhitePieces
-            boardOfPieces[0, 8] = new Pieces("White", 4, "Rook");
-            boardOfPieces[1, 8] = new Pieces("White", 5, "Knight");
-            boardOfPieces[2, 8] = new Pieces("White", 6, "Bishop");
-            boardOfPieces[3, 8] = new Pieces("White", 7, "Queen");
-            boardOfPieces[4, 8] = new Pieces("White", 8, "King");
-            boardOfPieces[5, 8] = new Pieces("White", 6, "Bishop");
-            boardOfPieces[6, 8] = new Pieces("White", 5, "Knight");
-            boardOfPieces[7, 8] = new Pieces("White", 4, "Rook");
+            boardOfPieces[16] = new Pieces("White", 4, "Rook", 7, 0);
+            boardOfPieces[17] = new Pieces("White", 5, "Knight", 7, 1);
+            boardOfPieces[18] = new Pieces("White", 6, "Bishop", 7, 2);
+            boardOfPieces[19] = new Pieces("White", 7, "Queen", 7, 3);
+            boardOfPieces[20] = new Pieces("White", 8, "King", 7, 4);
+            boardOfPieces[21] = new Pieces("White", 6, "Bishop", 7, 5);
+            boardOfPieces[22] = new Pieces("White", 5, "Knight", 7, 6);
+            boardOfPieces[23] = new Pieces("White", 4, "Rook", 7, 7);
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 24; i < 32; i++)
             {
-                boardOfPieces[i, 7] = new Pieces("White", 1, "Pawn");
-            }          
+                boardOfPieces[i] = new Pieces("White", 1, "Pawn", 6, counter);
+                counter++;
+            }
+            counter = 0;
             #endregion
         }
     }
